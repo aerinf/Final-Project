@@ -25,6 +25,10 @@ class Blockchain {
         console.log("Using " + cm + " and a mining reward of " + this.miningReward);
     }
     verifyBlockchain() {
+        /*
+        Here, the process of ledger verification is simulated. 
+        The simulation depends upon the user input of specific consensus mechanism.
+        */
         if (this.cm==="Proof of Work") {
             let maxProcessingPower=0;
             let userID=0;
@@ -62,10 +66,10 @@ class Blockchain {
             console.log("\nPower is used but it is less vulnerable to attacks.\nUser " + userID + " is rewarded because they have the most coins, so they are allowed to verify the ledger.\n");
         }
         else if (this.cm==="Proof of History") {
-
+            console.log("\nA historical record is kept adjacent to the blockchain, allowing the blockchain to be verified using a record of time.\nParrallel processing means there is less to process.\nByzantine fault tolerance also allows the ledger to be verified using staked coins like PoS.\nUses much less power than PoW.\n");
         }
         else if (this.cm==="Directed Acyclic Graph") {
-
+            console.log("\nMultiple transactions can occur simultaneously, making this very efficient.\nNot much power is used. There is no mining. The ledger is verified by each node's references to other nodes.\nThere are no fees, so this is good for micropayments.\nHowever, it is less secure.\n");
         }
         else {
             console.log("Sorry, I don't know that consensus mechanism yet.");
